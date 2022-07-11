@@ -1,0 +1,415 @@
+@import "reset";
+@import "variables";
+@import "global";
+@import "typography";
+@import "header";
+@import "footer";
+.scroll-up {
+  font-size: 2rem;
+  position: fixed;
+  right: 8%;
+  bottom: -5rem;
+  z-index: $z-fix;
+  color: $secondary-color;
+  background-color: $white;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  border-radius: 50%;
+  transition: 0.4s;
+  &.show-scrollup {
+    bottom: 2rem;
+  }
+}
+.hero {
+  overflow: hidden;
+  padding-top: 10rem;
+  background: $hero-linear-gradient;
+  color: $text-color-alt-1;
+  position: relative;
+  &__content {
+    padding-bottom: 3.75rem;
+  }
+  &__title {
+    font-size: 2.25rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  &__description {
+    line-height: 2;
+    margin-bottom: 2.125rem;
+  }
+  &__achievement {
+    position: relative;
+    z-index: $z-tooltip;
+    width: max-content;
+    &-content {
+      border-radius: 1.5rem;
+      padding: 6px 30px 12px;
+      text-align: center;
+      color: $text-color;
+      background-color: $white;
+    }
+    &:first-of-type {
+      margin-top: 9.125rem;
+      margin-bottom: 3rem;
+    }
+    &-number {
+      font-size: 1.875rem;
+      line-height: 1.25;
+      font-weight: $fw-bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-text {
+      font-size: 0.875rem;
+    }
+    &-star {
+      margin-left: 0.25rem;
+      width: 2.1875rem;
+      height: 2.1875rem;
+    }
+    &-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: -0.5625rem;
+      right: -0.625rem;
+      background: $hero-linear-gradient;
+      border-radius: 1.5rem;
+      z-index: $z-under;
+    }
+  }
+  &__img {
+    position: absolute;
+    right: -20%;
+    bottom: 0;
+    z-index: 9;
+    width: 306px;
+    height: 399px;
+    object-fit: cover;
+  }
+}
+.testimonial {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__content {
+    margin-top: 2.5rem;
+    padding: 2.5rem 0 2.875rem;
+    display: grid;
+    row-gap: 2rem;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 3.125rem;
+      background-color: $primary-color;
+      z-index: $z-under;
+      border-radius: 1.5rem;
+      width: 1.75rem;
+    }
+  }
+  &__header &__btn {
+    display: none;
+  }
+  &__data {
+    background-color: $white;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5625rem 2.25rem rgba(0, 0, 0, 0.2);
+  }
+  &__data:first-of-type &__review {
+    background: $blue-color;
+  }
+  &__review {
+    color: $text-color-alt-1;
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    background-color: $secondary-color;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    padding: 0rem 2rem;
+    justify-content: space-between;
+  }
+
+  &__info-wrappser {
+    padding: 1.5625rem 0;
+    margin-right: auto;
+  }
+  &__occupation {
+    display: block;
+    font-weight: $fw-regular;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+
+  &__img {
+    width: 6.25rem;
+    height: 6.25rem;
+    transform: translateY(-1.40625rem);
+  }
+  &__btn {
+    margin-left: auto;
+  }
+}
+.courses {
+  background-color: $blue-color;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  &__content {
+    display: grid;
+    margin: 0 -2rem;
+    row-gap: 3.75rem;
+    margin-bottom: 3.125rem;
+  }
+  &__data {
+    padding: 0 2rem 2.375rem 2rem;
+    background-color: $white;
+    border-radius: 1.5rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      right: 2rem;
+      height: 0.5rem;
+      border-radius: 1.5rem;
+      background-color: $primary-color;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.875rem;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__name {
+    font-size: 1.5rem;
+  }
+  &__time {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    min-width: 4.5rem;
+  }
+  &__icon {
+    margin-right: 0.3125rem;
+  }
+  &__btn {
+    margin-left: auto;
+  }
+}
+
+.apps {
+  text-align: center;
+  &__container {
+    margin-top: 1rem;
+  }
+  &__content {
+    display: grid;
+    row-gap: 1.625rem;
+  }
+  &__data {
+    background-color: $black;
+    width: 19.375rem;
+    padding: 1.25rem 0 1.25rem 1.875rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: $text-color-alt-1;
+  }
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.875rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    padding-top: 16.5rem;
+    &__content {
+      padding-bottom: 0;
+      margin-bottom: 7.8125rem;
+    }
+    &__title {
+      font-size: 3.125rem;
+    }
+    &__description {
+      margin-bottom: 1.875rem;
+    }
+    &__img {
+      width: 496px;
+      height: 647px;
+    }
+    &__achievement {
+      margin-left: 2.375rem;
+      &:first-of-type {
+        margin-top: 11.5rem;
+        margin-bottom: 7.375rem;
+      }
+    }
+    &__img {
+      right: 0;
+    }
+  }
+  .testimonial {
+    &__content {
+      margin-top: 1.5rem;
+      row-gap: 2.5rem;
+      &::before {
+        left: 5.375rem;
+      }
+    }
+    &__review {
+      font-size: 1.125rem;
+    }
+    &__info {
+      &-wrappser {
+        padding: 1.875rem 0;
+      }
+    }
+    &__name {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+    &__occupation {
+      font-size: 1.125;
+    }
+  }
+  .courses {
+    &__title {
+      margin-bottom: 4.125rem;
+    }
+    &__content {
+      margin-left: 0;
+      margin-right: 0;
+      row-gap: 5rem;
+    }
+    &__img {
+      height: 16.25rem;
+    }
+    &__info {
+      justify-content: space-between;
+    }
+    &__name {
+      font-size: 1.875rem;
+    }
+  }
+  .apps {
+    &__container {
+      margin-top: 1.6875rem;
+    }
+    &__content {
+      display: flex;
+      column-gap: 1.875rem;
+      justify-content: center;
+    }
+    &__data {
+      margin: 0;
+    }
+  }
+}
+@media screen and (min-width: 64rem) {
+  .hero {
+    padding-top: 13.75rem;
+    &__content {
+      margin-bottom: 13.75rem;
+    }
+    &__title,
+    &__description {
+      max-width: 29rem;
+    }
+    &__title {
+      margin-bottom: 1.125rem;
+    }
+    &__achievement {
+      position: absolute;
+
+      &:first-of-type {
+        left: 39rem;
+        bottom: 22.25rem;
+        margin: 0;
+      }
+      &:last-of-type {
+        left: 36.25rem;
+        bottom: 7.25rem;
+        margin: 0;
+      }
+    }
+    &__img {
+      width: 446px;
+      height: 582px;
+      right: 7.25rem;
+    }
+  }
+  .testimonial {
+    &__main {
+      display: flex;
+      align-items: center;
+      column-gap: 8.375rem;
+    }
+    &__container {
+      order: -1;
+      flex: 1;
+    }
+    &__header {
+      flex: 1;
+    }
+
+    &__data {
+      &:last-of-type {
+        transform: translateX(2rem);
+      }
+    }
+    &__container &__btn {
+      display: none;
+    }
+    &__header &__btn {
+      display: inline-block;
+      margin-top: 1.875rem;
+    }
+    &__description {
+      margin-top: 1rem;
+    }
+  }
+  .courses {
+    &__title {
+      margin-bottom: 3.5rem;
+    }
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 7.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  .apps {
+    &__container {
+      margin-top: 2.8125rem;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+body {
+  font-family: $body-font;
+  color: $text-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: $fw-regular;
+  width: 100%;
+}
+
+button,
+a {
+  font-family: $body-font;
+}
+
+.container {
+  padding: 0px 2rem;
+}
+.heading {
+  font-family: $heading-font;
+  font-weight: $fw-black;
+}
+
+.btn {
+  color: $text-color-alt-1;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  &:hover {
+    background: linear-gradient(90deg, $secondary-color, $primary-color);
+  }
+  &__icon {
+    margin-right: 0.625rem;
+  }
+
+  &--primary {
+    padding: 0.75rem 2rem;
+    border-radius: 1.5rem;
+    background: $secondary-color;
+  }
+  &--secondary {
+    line-height: 2;
+    background: $primary-color;
+    border-radius: 0.5rem;
+    padding: 0rem 1.75rem;
+  }
+}
+.section {
+  padding: 6.25rem 0 6.25rem;
+}
+.section-alt {
+  padding: 4rem 0px 4.375rem;
+}
+.section-title {
+  font-size: 1.75rem;
+}
+.section-alt .section-title {
+  color: $text-color-alt-1;
+}
+.section-description {
+  line-height: 2;
+  margin-top: 0.625rem;
+}
+@media screen and (min-width: 48rem) {
+  .container {
+    padding: 0 6.25rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  .section-alt {
+    padding: 4.375rem 0px;
+  }
+  .btn {
+    &--primary {
+      font-weight: $fw-bold;
+    }
+  }
+}
+@media screen and (min-width: 64rem) {
+  .container {
+    padding: 0 7.25rem;
+  }
+  .section {
+    &-title {
+      font-size: 3.75rem;
+    }
+  }
+}

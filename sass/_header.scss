@@ -1,0 +1,126 @@
+.header {
+  padding-top: 3.75rem;
+  position: fixed;
+  z-index: $z-fix;
+  top: 0;
+  left: 0;
+  right: 0;
+  &__container {
+    padding: 0px 2rem;
+  }
+  &.show-header {
+    background-color: $blue-color;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    padding: 2rem 0;
+  }
+  &.show-header .nav__toggle {
+    color: $white;
+  }
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  &__logo {
+    font-size: 2.25rem;
+    color: $text-color-alt-1;
+    line-height: normal;
+  }
+
+  &__toggle,
+  &__close {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.825rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__close {
+    position: absolute;
+    color: $text-color-alt-1;
+    right: 32px;
+    top: 60px;
+  }
+
+  &__list {
+    margin: auto;
+    display: grid;
+    row-gap: 1rem;
+    text-align: center;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    color: $text-color-alt-1;
+    padding: 0.5rem;
+    display: block;
+    text-underline-offset: 0.125rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (max-width: 47.9375rem) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-100%);
+    background-color: $dark-color;
+    z-index: $z-fix;
+    display: flex;
+    transition: 0.4s;
+    &.show-menu {
+      transform: translateY(0);
+    }
+  }
+}
+@media screen and (min-width: 48rem) {
+  .header {
+    &__container {
+      padding: 0 3.75rem;
+    }
+  }
+  .nav {
+    &__toggle,
+    &__close {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      column-gap: 1.625rem;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__link {
+      font-weight: $fw-bold;
+      font-size: 1rem;
+    }
+    &__btn {
+      background-color: $primary-color;
+      margin-top: 0;
+      margin-left: 0.5rem;
+    }
+  }
+}
+@media screen and (min-width: 64rem) {
+  .header {
+    &__container {
+      padding: 0 7.25rem;
+    }
+  }
+}
